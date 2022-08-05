@@ -46,6 +46,24 @@ const css = StyleSheet.create({
       checkoutmp: {
         flex: 1,
         marginTop: 30
+      },
+
+      motorista: {
+        alignItems: 'center',
+        backgroundColor: '#222'
+      },
+
+      motorista__image: {
+        width: 200,
+        height: 200,
+        borderRadius: 100,
+        marginBottom: 20
+      }, 
+
+      motorista__text: {
+        fontWeight: 'bold',
+        fontSize: 22,
+        color: '#fff'
       }
   });
 
