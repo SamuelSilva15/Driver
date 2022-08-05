@@ -1,4 +1,5 @@
 import Home from './Home';
 import Checkout from './Checkout';
+import Tracking from './Tracking';
 
-export {Home, Checkout};
+export {Home, Checkout, Tracking};

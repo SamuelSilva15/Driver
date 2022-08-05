@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import config from '../config';
 import { WebView } from 'react-native-webview';
 
@@ -32,8 +32,16 @@ export default function Checkout(props) {
 
     async function stateChange(state){
         console.log(state);
+        let url = state.url;
+        if(state.canGoBack == true && !url.includes('mercadopago')){
+            if(url.includes("approved")){
+            props.navigation.navigate('Tracking');
+            }
+            else {
+            props.navigation.navigate('Home');
+            }
+        }   
     }
-
     return (
         <View style={css.container}>
             {url && 

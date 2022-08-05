@@ -14,14 +14,19 @@ app.post('/', (req, res) => {
    
    let preference = {
         items: [{
-        title: req.body.address,
-        quantity: 1,
-        currency_id: 'BRL',
-        unit_price: parseFloat(req.body.price)
+            title: req.body.address,
+            quantity: 1,
+            currency_id: 'BRL',
+            unit_price: parseFloat(req.body.price)
         }], 
         payer: {
-        name: 'Samuel',
-        email: "demo@mail.com"
+            name: 'Samuel',
+            email: "demo@mail.com"
+        },
+        back_urls: {
+            failure: "https://www.webdesigemfoco.com/failure",
+            pending: "https://www.webdesigemfoco.com/pending",
+            success: "https://www.webdesigemfoco.com/sucess",
         },
         payment_methods: {
             installments: 3,
