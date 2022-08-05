@@ -2,7 +2,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import React, { useEffect, useRef, useState } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View, KeyboardAvoidingView, Platform } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import MapView from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
@@ -38,7 +38,9 @@ export default function Home(props) {
       }, [])
 
     return (
-      <View style={css.container}>
+      <KeyboardAvoidingView 
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={css.container}>
         <MapView 
         style={css.map}
         initialRegion={origin}
@@ -102,12 +104,13 @@ export default function Home(props) {
           <Text style={css.distance__text}>Distância: {distancia.toFixed(2).replace('.', ',')} km</Text>
           <TouchableOpacity style={css.price}  onPress={() => props.navigation.navigate('Checkout', {price: distancia.toFixed(2), address: address})}>
             <Text style={css.price__text}>
-                <MaterialIcons name="payment" size={24} color="white" /> Pagar: R${price.toFixed(2).replace('.', ',')}
+                <MaterialIcons name="payment" size={24} color = 'white'/> 
+                <Text>Pagar: R${price.toFixed(2).replace('.', ',')}</Text>
                 </Text>
           </TouchableOpacity>
         </View>
       }
     </View>
-    </View>
+    </KeyboardAvoidingView>
     );
 }

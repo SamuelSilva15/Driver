@@ -14,6 +14,8 @@ const css = StyleSheet.create({
 
     search: {
         height: '40%',
+        backgroundColor: 'black',
+
       },
 
       distance: {
@@ -24,17 +26,20 @@ const css = StyleSheet.create({
       },
 
       distance__text: {
+        color: 'white',
         fontSize: 20,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        borderRadius: 15,
+        padding: 7,
+        backgroundColor: '#00CED1',
       },
 
       price: {
-        backgroundColor: 'black',
+        fontSize: 20,
+        backgroundColor: '#00CED1',
         padding: 7,
-        borderRadius: 4,
-        marginTop: 30,
-        justifyContent: 'center',
-        alignItems: 'center'
+        borderRadius: 10,
+        marginTop: 50,
       },
 
       price__text: {

@@ -26,7 +26,7 @@ app.post('/', (req, res) => {
         back_urls: {
             failure: "https://www.webdesigemfoco.com/failure",
             pending: "https://www.webdesigemfoco.com/pending",
-            success: "https://www.webdesigemfoco.com/sucess",
+            success: "https://www.webdesigemfoco.com/success",
         },
         payment_methods: {
             installments: 3,
@@ -41,7 +41,7 @@ app.post('/', (req, res) => {
     mercadopago.preferences.create(preference).then(function (data) {
         res.send(JSON.stringify(data.response.sandbox_init_point));
     }).catch(function (error) {
-        console.log(erro);
+        console.log(error);
     });
 
 });
