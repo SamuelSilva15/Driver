@@ -14,17 +14,22 @@ app.post('/', (req, res) => {
    
    let preference = {
         items: [{
-        title: 'Blue shirt',
-        quantity: 10,
+        title: req.body.address,
+        quantity: 1,
         currency_id: 'BRL',
-        unit_price: 10
+        unit_price: parseFloat(req.body.price)
         }], 
         payer: {
+        name: 'Samuel',
         email: "demo@mail.com"
         },
-        payment_method: {
-            instalmlments: 3
-        }
+        payment_methods: {
+            installments: 3,
+            excluded_payment_types: [
+                {"id": "ticket"},
+                {"id": "debit_card"}
+            ]
+        },
     };
 
 

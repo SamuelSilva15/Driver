@@ -1,11 +1,14 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { View, Text } from 'react-native';
 import config from '../config';
+import { WebView } from 'react-native-webview';
 
 import { css } from '../assets/css/Css';
 
 
 export default function Checkout(props) {
+
+    const [url, setUrl] = useState(null);
 
     useEffect(() => {
         async function sendServer(){
@@ -21,16 +24,27 @@ export default function Checkout(props) {
                 })
             });
             let json = await response.json();
-            console.log(json);
+            setUrl(json);
+            console.log(url);
         }
         sendServer();
     }, []);
-    console.log(props);
+
+    async function stateChange(state){
+        console.log(state);
+    }
 
     return (
         <View style={css.container}>
-            <Text>O valor da corrida é: {props.route.params.price}.</Text>
-            <Text>Seu Destino é: {props.route.params.address}.</Text>
+            {url && 
+            <WebView
+            style={css.checkoutmp}
+            originWhitelist={['*']}
+            source={{uri: url}}
+            startInLoadingState={true}
+            onNavigationStateChange={state=>stateChange(state)}
+            />
+            }
         </View>
     );
 }

@@ -41,6 +41,11 @@ const css = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 20
+      },
+
+      checkoutmp: {
+        flex: 1,
+        marginTop: 30
       }
   });
 
