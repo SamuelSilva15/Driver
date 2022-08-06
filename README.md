@@ -30,7 +30,7 @@ Driver é um projeto feito com base em um tutorial, que simula o Uber.
 ![image](https://user-images.githubusercontent.com/80695387/183225126-7a48b054-5f10-4161-a3d1-16c8eb75f557.png)
 
 O Aplicativo também utiliza uma API que é disponibilizada pelo mercado pago: https://www.mercadopago.com.br/developers/pt. Basta cadastrar-se. 
- -- Depois de escolhido o destino, o usuário pode pagar a viagem utilizando o mercadopago, e toda a validação é feita por este.
+ </br>*Depois de escolhido o destino, o usuário pode pagar a viagem utilizando o mercadopago, e toda a validação é feita por este.*
  
  ![image](https://user-images.githubusercontent.com/80695387/183225570-eaa1748f-d1b8-4c5c-957d-a9c8a5736a07.png)
  
